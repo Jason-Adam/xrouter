@@ -12,24 +12,24 @@ type XRouter interface {
 	MethodNotFound(handlerFunc http.HandlerFunc)
 }
 
-func New() XRouter {
-	return &xRouter{}
+func New() *Mux {
+	return &Mux{}
 }
 
-type xRouter struct {
+type Mux struct {
 }
 
-func (*xRouter) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+func (*Mux) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 
-func (*xRouter) Use(middlewares ...func(http.Handler) http.Handler) {
+func (*Mux) Use(middlewares ...func(http.Handler) http.Handler) {
 }
 
-func (*xRouter) Method(method string, path string, handlerFunc http.HandlerFunc) {
+func (*Mux) Method(method string, path string, handlerFunc http.HandlerFunc) {
 }
 
-func (*xRouter) NotFound(handlerFunc http.HandlerFunc) {
+func (*Mux) NotFound(handlerFunc http.HandlerFunc) {
 }
 
-func (*xRouter) MethodNotFound(handlerFunc http.HandlerFunc) {
+func (*Mux) MethodNotFound(handlerFunc http.HandlerFunc) {
 }
